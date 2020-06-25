@@ -1,0 +1,53 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="strength" type="Decimal"/>
+    <aura:attribute name="dexterity" type="Decimal"/>
+    <aura:attribute name="constitution" type="Decimal"/>
+    <aura:attribute name="intelligence" type="Decimal"/>
+    <aura:attribute name="wisdom" type="Decimal"/>
+    <aura:attribute name="charisma" type="Decimal"/>
+    <aura:attribute name="options" type="Decimal[]" access="PRIVATE"/>
+    <aura:attribute name="validate" type="Aura.Action" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <lightning:card class="slds-p-horizontal_small" title="Set ability scores:">
+        <aura:text value="Each ability score value can only be selected once."/>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning:select name="strengthSelect" label="Strengh:" aura:id="abilityModifier" value="{!v.strength}">
+                    <aura:iteration items="{!v.options}" var="option">
+                        <option text="{!option}" value="{!option}"/>
+                    </aura:iteration>
+                </lightning:select>
+                <lightning:select name="dexteritySelect" label="Dexterity:" aura:id="abilityModifier" value="{!v.dexterity}">
+                    <aura:iteration items="{!v.options}" var="option">
+                        <option text="{!option}" value="{!option}"/>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning:select name="constitutionSelect" label="Constitution:" aura:id="abilityModifier" value="{!v.constitution}">
+                    <aura:iteration items="{!v.options}" var="option">
+                        <option text="{!option}" value="{!option}"/>
+                    </aura:iteration>
+                </lightning:select>
+                <lightning:select name="intelligenceSelect" label="Intelligence:" aura:id="abilityModifier" value="{!v.intelligence}">
+                    <aura:iteration items="{!v.options}" var="option">
+                        <option text="{!option}" value="{!option}"/>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning:select name="wisdomSelect" label="Wisdom:" aura:id="abilityModifier" value="{!v.wisdom}">
+                    <aura:iteration items="{!v.options}" var="option">
+                        <option text="{!option}" value="{!option}"/>
+                    </aura:iteration>
+                </lightning:select>
+                <lightning:select name="charismaSelect" label="Charisma:" aura:id="abilityModifier" value="{!v.charisma}">
+                    <aura:iteration items="{!v.options}" var="option">
+                        <option text="{!option}" value="{!option}"/>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>

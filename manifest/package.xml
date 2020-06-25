@@ -2,12 +2,14 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>dungeonClassController</members>
+        <members>dungeonSpellsController</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>harness</members>
         <members>dungeon</members>
         <members>dungeonClassList</members>
+        <members>abilityScoreSelection</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <version>48.0</version>

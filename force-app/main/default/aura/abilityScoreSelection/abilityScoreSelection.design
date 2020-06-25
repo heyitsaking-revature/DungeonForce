@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="strength" label="Strength Value"/>
+    <design:attribute name="dexterity" label="Dexterity Value"/>
+    <design:attribute name="constitution" label="Constitution Value"/>
+    <design:attribute name="intelligence" label="Intelligence Value"/>
+    <design:attribute name="wisdom" label="Wisdom Value"/>
+    <design:attribute name="charisma" label="Charisma Value"/>
+</design:component>

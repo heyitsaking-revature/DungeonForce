@@ -21,7 +21,6 @@ public class dungeonClassController {
             HttpResponse informationResponse = h.send(classInformation);
             Map<String, Object> informationResults = (Map<String, Object>) JSON.deserializeUntyped(informationResponse.getBody());
             
-            System.debug(informationResults);
             classes.add(informationResults);
         }
         

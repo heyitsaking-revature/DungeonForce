@@ -2,6 +2,8 @@
 # If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
 # For useful gitignore templates see: https://github.com/github/gitignore
 
+DungeonForce_ERD.png
+
 # Salesforce cache
 .sfdx/
 .localdevserver/
@@ -33,3 +35,4 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+
