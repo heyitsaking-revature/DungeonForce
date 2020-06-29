@@ -1,0 +1,89 @@
+{
+  "appPageId" : "bb1e85fb-5c6b-48c3-9138-d35d938b1daf",
+  "componentName" : "siteforce:sldsTwoCol48Layout",
+  "id" : "2d0c36c5-21a5-47f5-9b72-f3b0c5502be6",
+  "label" : "Support Page",
+  "regions" : [ {
+    "id" : "26160c9f-79a1-4931-852b-6a92821481ae",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "attachFiles" : false,
+        "authenticatedActionName" : "NewCommunityCase",
+        "confirmationMessageDescription" : "You'll hear back from us soon.",
+        "confirmationMessageTitle" : "Your request was submitted successfully.",
+        "deflectionCategoryGroupName" : "{!DataCategoryGroupName}",
+        "deflectionNotHelpful" : "Didn't find what you're looking for?",
+        "deflectionNumberOfArticles" : 6,
+        "deflectionParentCategory" : "{!TopLevelCategory}",
+        "deflectionSubHeader" : "Check out these articles...",
+        "deflectionTitle" : "Need Answers Fast?",
+        "hasDeflection" : true,
+        "headerTitle" : "Submit a Ticket",
+        "isReCaptchaEnabled" : false,
+        "reCaptchaPrivateKey" : "",
+        "reCaptchaPublicKey" : "",
+        "unauthenticatedActionName" : "NewCommunityCase"
+      },
+      "componentName" : "selfService:caseCreate",
+      "id" : "943fecd2-0c01-4a7c-9bd3-9ca065eb18dd",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "524cd5aa-b3fd-4d5f-a13f-35b0a7ec89e9",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "enableInlineEdit" : true,
+        "filterName" : "00B3h000006Gl3bEAC",
+        "layout" : "COMPACT",
+        "pageSize" : 25,
+        "scope" : "Case",
+        "showActionBar" : true,
+        "showChartsPanel" : true,
+        "showDisplay" : "showall",
+        "showFilterPanel" : true,
+        "showImageIcon" : true,
+        "showManualRefreshButton" : true,
+        "showObjectName" : true,
+        "showPinnedList" : true,
+        "showSearchBar" : true
+      },
+      "componentName" : "forceCommunity:objectHome",
+      "id" : "010a4ee7-20dc-458c-9f75-c8582a5408a2",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "30d1648e-70df-449e-bda3-e0970369ff77",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "b98a022f-5e74-4667-8f90-562ea3be41ac",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "Support Page"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "5556975f-d402-4498-8934-043cb7c7536f",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "1f96673a-1de6-4267-b133-351030a591e2",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-support-page"
+}

@@ -1,0 +1,16 @@
+.THIS.scrollerSize {
+    max-height: 25vh;
+}
+.THIS .dice {
+    font-size: 30px;
+}
+.THIS .unit {
+    font-size: 15px;
+}
+.THIS .description {
+    font-style: italic;
+}
+.THIS .ib {
+    display: inline-block;
+    padding-left: 15px;
+}

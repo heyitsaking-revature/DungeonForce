@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="items" type="List" />
+    <aura:attribute name="isWeapons" type="Boolean" default="false"/>
+    <aura:attribute name="activeSections" type="List"/>
+    
+    
+    <lightning:accordion class="slds-p-horizontal_medium"
+                         aura:id="accordion"
+                         allowMultipleSectionsOpen="false"
+                         activeSectionName="{! v.activeSections }">
+        <aura:iteration items="{!v.items}" var="item">
+            <lightning:accordionSection label="{!item.name}">
+                <c:dungeonItemElements index="{!item.index}"/>
+            </lightning:accordionSection>            
+        </aura:iteration>
+    </lightning:accordion>
+</aura:component>

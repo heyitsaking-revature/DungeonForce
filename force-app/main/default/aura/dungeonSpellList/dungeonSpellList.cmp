@@ -1,0 +1,14 @@
+<aura:component controller="dungeonSpellsController">
+    <aura:attribute name="spells" type="String[]"/>
+    <aura:attribute name="activeTabSpells" type="String[]"/>
+    <aura:attribute name="initials" type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:tabset>
+        <aura:iteration items="{!v.initials}" var="initial">
+            <lightning:tab onactive="{!c.handleInitialTab}" label="{!initial}" id="{!initial}">
+                <c:dungeonSpellAccordion spells="{!v.activeTabSpells}"/>
+            </lightning:tab>
+        </aura:iteration>
+    </lightning:tabset>
+</aura:component>
