@@ -1,0 +1,10 @@
+{
+  "activeViewId" : "0bf8b1e5-8483-41b2-b46d-be3cdc0ae1ae",
+  "appPageId" : "bb1e85fb-5c6b-48c3-9138-d35d938b1daf",
+  "id" : "578c31f4-c1e2-4c6b-8a37-40dbfffa2273",
+  "label" : "My Campaigns",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-my-campaigns",
+  "type" : "route",
+  "urlPrefix" : "my-campaigns"
+}

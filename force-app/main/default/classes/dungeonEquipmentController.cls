@@ -66,7 +66,7 @@ public class dungeonEquipmentController {
         
         Object[] items = new Object[]{};
             
-        HttpRequest itemInfoRequest = new HttpRequest();
+            HttpRequest itemInfoRequest = new HttpRequest();
         for(Object result : (List<Object>) categoryInfoResults.get('equipment')) {
             Map<String, Object> item = (Map<String, Object>) result;
             String itemUrl = (String) item.get('url');
@@ -74,10 +74,31 @@ public class dungeonEquipmentController {
             itemInfoRequest.setMethod('GET');
             
             HttpResponse itemInfoResponse = h.send(itemInfoRequest);
-        	Object itemInfoResults = (Object) JSON.deserializeUntyped(itemInfoResponse.getBody());
-            items.add(itemInfoResults);
+            Map<String,Object> itemInfoResults = (Map<String,Object>) JSON.deserializeUntyped(itemInfoResponse.getBody());
+            Map<String, Object> relevantData = new Map<String, Object>();
+            relevantData.put('name', itemInfoResults.get('name'));
+            if(index.contains('weapon')) {
+                relevantData.put('damage', itemInfoResults.get('damage'));
+                relevantData.put('twoH_damage', itemInfoResults.get('2h_damage'));
+                relevantData.put('cost', itemInfoResults.get('cost'));
+                relevantData.put('weight', itemInfoResults.get('weight'));
+                List<Object> properties = (List<object>) itemInfoResults.get('properties');
+                try {
+                    for(Object prop: properties) {
+                        Map<String, Object> propValues = (Map<String, Object>) prop;
+                        if(propValues.get('name') == 'Versatile') {
+                            relevantData.put('versatile', true);
+                        }
+                    }
+                } catch(Exception e) {
+                    system.debug(e.getMessage());
+                } finally {
+                    items.add(relevantData);
+                }
+            } else {
+                items.add(itemInfoResults);
+            }
         }
-        
         return (List<Object>) items;
     }
 }

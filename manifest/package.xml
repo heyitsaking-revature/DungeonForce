@@ -16,8 +16,21 @@
         <members>dungeonSpellAccordion</members>
         <members>dungeonEquipmentList</members>
         <members>dungeonItemsList</members>
+        <members>dungeonItemElements</members>
         <members>abilityScoreSelection</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Network</name>
     </types>
     <types>
         <members>*</members>

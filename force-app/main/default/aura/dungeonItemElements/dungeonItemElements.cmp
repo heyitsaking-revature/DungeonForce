@@ -1,0 +1,57 @@
+<aura:component controller="dungeonEquipmentController">
+    <aura:attribute name="index" type="String"/>
+    <aura:attribute name="items" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <ui:scrollerWrapper class="scrollerSize">
+        <lightning:accordion>
+            <aura:iteration items="{!v.items}" var="item">
+                <lightning:accordionSection name="{!item.name}" label="{!item.name}">
+                    <div class="slds-grid slds-gutters slds-p-horizontal_small">
+                        <div class="slds-col slds-size_1-of-4">
+                            <span class="ib">
+                                <div class="attributeTitle">Cost: </div>
+                                <span class="dice">{!item.cost.quantity}</span>
+                                <span class="unit">{!item.cost.unit}</span>
+                            </span>
+                            <span class="ib">
+                                <div class="attributeTitle">Weight: </div>
+                                <div class="dice">{!item.weight} lb.</div>
+                            </span>
+                        </div>
+                        <div class="slds-col">
+                            <aura:if isTrue="{!item.damage}">
+                                <span class="ib">
+                                    <div class="attributeTitle">Damage: </div>
+                                    <div class="dice">{!item.damage.damage_dice}</div>
+                                </span>
+                                <aura:if isTrue="{!item.versatile}">
+                                    <span class="ib">
+                                        <div class="attributeTitle">Two-Handed Damage: </div>
+                                        <div class="dice">{!item.twoH_damage.damage_dice}</div>
+                                    </span>
+                                </aura:if>
+                                <div class="description">{!item.damage.damage_type.name} damage</div>
+                                <aura:set attribute="else">
+                                    <span class="ib">
+                                        <div class="attributeTitle">Armor Class: </div>
+                                        <div class="dice">{!item.armor_class.base}</div>
+                                        <aura:if isTrue="{!item.armor_class.dex_bonus}">
+                                            <span class="description">+ Dexterity Modifier</span>
+                                            <aura:if isTrue="{!item.armor_class.max_bonus}">
+                                                <span class="description"> (max 2)</span>
+                                            </aura:if>
+                                        </aura:if>
+                                        <aura:if isTrue="{!item.stealth_disadvantage}">
+                                            <div class="description">Disadvantage on Stealth Checks</div>
+                                        </aura:if>
+                                    </span>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </lightning:accordionSection>
+            </aura:iteration>
+        </lightning:accordion>
+    </ui:scrollerWrapper>
+</aura:component>

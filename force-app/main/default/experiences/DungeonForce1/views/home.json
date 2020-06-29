@@ -1,0 +1,82 @@
+{
+  "appPageId" : "bb1e85fb-5c6b-48c3-9138-d35d938b1daf",
+  "componentName" : "siteforce:sldsTwoCol66Layout",
+  "id" : "16c57bfd-6ebc-4bf1-b184-919ca5f9569d",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.DungeonForceBanner2.1}\" style=\"width: 1412.16px; height: 349.859px;\" />&nbsp;</p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "91931895-0bf1-4736-8abe-48af85d6cad6",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "711c167c-09db-4700-86cd-c87dbc6aa7df",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "flowArguments" : "",
+        "flowLayout" : "oneColumn",
+        "flowName" : "Character_Creation_Flow"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "38d1dbb0-da94-4acc-8904-91a1c63ff55a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "flowArguments" : "",
+        "flowLayout" : "oneColumn",
+        "flowName" : "Campaign_Creation_Flow"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "8392d8da-401c-4e47-b74b-59e93267878e",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "81396333-d499-4c44-b414-64389063e7ef",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:dungeon",
+      "id" : "cb41ed57-761c-4009-9915-e27c9c4b5333",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "85c5aaa2-203e-4de7-a063-5884f5799a21",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "2bca6562-1b79-439c-9f82-dd9a5b2b275b",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "94b2643d-a815-4ded-a490-651378bc4780",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "48a69184-d57c-43f5-8209-69aaab937e81",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}
