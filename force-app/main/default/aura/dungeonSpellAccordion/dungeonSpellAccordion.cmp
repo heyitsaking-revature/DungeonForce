@@ -1,0 +1,19 @@
+<aura:component controller="dungeonSpellsController">
+    <aura:attribute name="spells" type="String[]"/>
+    <aura:attribute name="currentActiveSpell" type="Object"/>
+    <aura:attribute name="activeSections" type="List"/>
+    
+    <ui:scrollerWrapper class="scrollerSize">
+        <lightning:accordion class="slds-p-horizontal_medium"
+                             aura:id="accordion"
+                             allowMultipleSectionsOpen="false"
+                             onsectiontoggle="{! c.handleSectionToggle }"
+                             activeSectionName="{! v.activeSections }">
+            <aura:iteration items="{!v.spells}" var="spell">
+                <lightning:accordionSection name="{!spell}" label="{!spell}">
+                    <c:dungeonSpellElement spell="{!spell}" information="{!v.currentActiveSpell}"/>
+                </lightning:accordionSection>
+            </aura:iteration>            
+        </lightning:accordion>
+    </ui:scrollerWrapper>
+</aura:component>

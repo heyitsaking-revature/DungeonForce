@@ -1,0 +1,23 @@
+<aura:component controller="dungeonEquipmentController">
+    <aura:attribute name="items" type="List" />
+    <aura:attribute name="isWeapons" type="Boolean" default="false"/>
+    <aura:attribute name="activeSections" type="List"/>
+    <aura:attribute name="simpleMelee" type="Object[]" />
+    <aura:attribute name="martialMelee" type="Object[]" />
+    <aura:attribute name="simpleRanged" type="Object[]" />
+    <aura:attribute name="martialRanged" type="Object[]" />
+    <aura:attribute name="light" type="Object[]" />
+    <aura:attribute name="medium" type="Object[]" />
+    <aura:attribute name="heavy" type="Object[]" />
+    
+    <lightning:accordion class="slds-p-horizontal_medium"
+                         aura:id="accordion"
+                         allowMultipleSectionsOpen="false"
+                         onsectiontoggle="{! c.handleSectionToggle }"
+                         activeSectionName="{! v.activeSections }">
+        <aura:iteration items="{!v.items}" var="item">
+            <lightning:accordionSection label="{!item.name}">
+            </lightning:accordionSection>            
+        </aura:iteration>
+    </lightning:accordion>
+</aura:component>

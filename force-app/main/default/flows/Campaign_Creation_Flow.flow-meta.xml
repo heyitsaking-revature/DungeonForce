@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_Campaign_Name</name>
+        <label>Assign Campaign Name</label>
+        <locationX>332</locationX>
+        <locationY>50</locationY>
+        <assignmentItems>
+            <assignToReference>New_Campaign.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Enter_campaign_name</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_New_Campaign</targetReference>
+        </connector>
+    </assignments>
+    <interviewLabel>Campaign Creation Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Campaign Creation Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_New_Campaign</name>
+        <label>Create_New_Campaign</label>
+        <locationX>457</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Campaign_Creation_Success</targetReference>
+        </connector>
+        <inputReference>New_Campaign</inputReference>
+    </recordCreates>
+    <screens>
+        <name>Campaign_Creation</name>
+        <label>Campaign Creation</label>
+        <locationX>212</locationX>
+        <locationY>50</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Campaign_Name</targetReference>
+        </connector>
+        <fields>
+            <name>Enter_campaign_name</name>
+            <dataType>String</dataType>
+            <fieldText>Enter campaign name:</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Campaign_Creation_Success</name>
+        <label>Campaign Creation Success!</label>
+        <locationX>602</locationX>
+        <locationY>50</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Campaign_Creation_Success_Mesasge</name>
+            <fieldText>&lt;p&gt;Congratulations! Your campaign&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;{!Enter_campaign_name}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;was created successfully! Go adventure!&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Campaign_Creation</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>New_Campaign</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Campaign__c</objectType>
+    </variables>
+</Flow>

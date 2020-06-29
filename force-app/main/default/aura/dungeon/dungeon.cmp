@@ -1,9 +1,15 @@
-<aura:component>
+<aura:component implements="forceCommunity:availableForAllPageTypes">
     <lightning:card class="slds-p-horizontal_small">
         <h1>Reference Information</h1>
         <lightning:tabset>
             <lightning:tab label="Classes">
                 <c:dungeonClassList/>
+            </lightning:tab>
+            <lightning:tab label="Spells">
+                <c:dungeonSpellList/>
+            </lightning:tab>
+            <lightning:tab label="Equipment">
+                <c:dungeonEquipmentList/>
             </lightning:tab>
         </lightning:tabset>
     </lightning:card>

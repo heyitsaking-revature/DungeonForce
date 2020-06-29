@@ -1,9 +1,9 @@
 .THIS {
 }
-.THIS h1 {
-    font-size: 20px;
-}
 .THIS .attributeTitle {
     font-size: 1em;
     font-weight: bold;
+}
+.THIS .hitDie {
+    font-size: 30px;
 }

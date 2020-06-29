@@ -1,0 +1,31 @@
+<aura:component controller="dungeonSpellsController">
+    <aura:attribute name="spell" type="String"/>
+    <aura:attribute name="information" type="Object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="slds-grid slds-gutters slds-p-horizontal_small">
+        <div class="slds-col slds-size_1-of-6">
+            <div>
+                <span class="attributeTitle">Level: </span>
+                <span>{!v.information.level}</span>
+            </div>
+            <br/>
+            <div>
+                <span class="attributeTitle">Range: </span>
+                <span>{!v.information.range}</span>
+            </div>
+            <br/>
+            <div> 
+                <span class="attributeTitle">Casting Time: </span>
+                <span>{!v.information.casting_time}</span>
+            </div>
+        </div>
+        <div class="slds-col">
+            <span class="attributeTitle">Materials: </span>
+            <span>{!v.information.material}</span>
+            <br/>
+            <br/>
+            <div class="attributeTitle">Description: </div>
+            <span class="description">{!v.information.desc[0]}</span>
+        </div>
+    </div>
+</aura:component>

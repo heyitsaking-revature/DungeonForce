@@ -1,41 +1,17 @@
 <aura:component controller="dungeonClassController">
-    <aura:attribute name="classes" type="Object[]"/>
+    <aura:attribute name="classes" type="String[]"/>
+    <aura:attribute name="activeSections" type="List"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     
-    <lightning:card class="slds-p-horizontal_small">
+    <lightning:accordion class="slds-p-horizontal_medium"
+                         aura:id="accordion"
+                         allowMultipleSectionsOpen="true"
+                         onsectiontoggle="{! c.handleSectionToggle }"
+                         activeSectionName="{! v.activeSections }">
         <aura:iteration items="{!v.classes}" var="class">
-            <lightning:card title="{!class.name}">
-                <div class="slds-grid slds-gutters slds-p-horizontal_large">
-                    <div class="slds-col">
-                        <h2>Hit Die</h2>
-                        <span>{!class.hit_die}</span>
-                    </div>
-                    <div class="slds-col">
-                        <h2>Possible Proficiencies</h2>
-                        <aura:iteration items="{!class.proficiency_choices[0].from}" var="choice">
-                            <div>{!choice.name}</div>
-                        </aura:iteration>
-                    </div>
-                    <div class="slds-col">
-                        <h2>Equipment Proficiencies</h2>
-                        <aura:iteration items="{!class.proficiencies}" var="proficiency">
-                            <div>{!proficiency.name}</div>
-                        </aura:iteration>
-                    </div>
-                    <div class="slds-col">
-                        <h2>Saving Throws</h2>
-                        <aura:iteration items="{!class.saving_throws}" var="saving_throw">
-                            <div>{!saving_throw.name}</div>
-                        </aura:iteration>
-                    </div>
-                    <div class="slds-col">
-                        <h2>Subclasses</h2>
-                        <aura:iteration items="{!class.subclasses}" var="subclass">
-                            <div>{!subclass.name}</div>
-                        </aura:iteration>
-                    </div>
-                </div>
-            </lightning:card>
+            <lightning:accordionSection name="{!class}" label="{!class}">
+                <c:dungeonClassElement class="{!class}"/>
+            </lightning:accordionSection>
         </aura:iteration>
-    </lightning:card>
+    </lightning:accordion>
 </aura:component>

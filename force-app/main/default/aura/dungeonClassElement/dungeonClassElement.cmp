@@ -1,0 +1,35 @@
+<aura:component controller="dungeonClassController">
+    <aura:attribute name="class" type="String"/>
+    <aura:attribute name="information" type="Object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="slds-grid slds-gutters slds-p-horizontal_small">
+        <div class="slds-col slds-size_1-of-6">
+            <div class="attributeTitle">Hit Die: </div>
+            <span class="hitDie">{!v.information.hit_die}</span>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <div class="attributeTitle">Proficiency Choices: </div>
+            <span>
+                <aura:iteration items="{!v.information.proficiency_choices[0].from}" var="choice">
+                    <div>{!choice.name}</div>
+                </aura:iteration>
+            </span>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <div class="attributeTitle">Equipment Proficiencies: </div>
+            <span>
+                <aura:iteration items="{!v.information.proficiencies}" var="proficiency">
+                    <div>{!proficiency.name}</div>
+                </aura:iteration>
+            </span>
+        </div>
+        <div class="slds-col slds-size_1-of-6">
+            <div class="attributeTitle">Saving Throws: </div>
+            <span>
+                <aura:iteration items="{!v.information.saving_throws}" var="saving_throw">
+                    <div>{!saving_throw.name}</div>
+                </aura:iteration>
+            </span>
+        </div>
+    </div>
+</aura:component>

@@ -3,14 +3,25 @@
     <types>
         <members>dungeonClassController</members>
         <members>dungeonSpellsController</members>
+        <members>dungeonEquipmentController</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>harness</members>
         <members>dungeon</members>
         <members>dungeonClassList</members>
+        <members>dungeonClassElement</members>
+        <members>dungeonSpellList</members>
+        <members>dungeonSpellElement</members>
+        <members>dungeonSpellAccordion</members>
+        <members>dungeonEquipmentList</members>
+        <members>dungeonItemsList</members>
         <members>abilityScoreSelection</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
     </types>
     <version>48.0</version>
 </Package>

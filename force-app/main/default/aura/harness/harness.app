@@ -1,3 +1,3 @@
 <aura:application extends="force:slds">
-    <c:abilityScoreSelection/>
+    <c:dungeon/>
 </aura:application>
