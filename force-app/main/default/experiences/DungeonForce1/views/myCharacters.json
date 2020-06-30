@@ -9,24 +9,9 @@
     "type" : "region"
   }, {
     "components" : [ {
-      "componentAttributes" : {
-        "enableInlineEdit" : true,
-        "filterName" : "00B3h000005ASneEAG",
-        "layout" : "COMPACT",
-        "pageSize" : 25,
-        "scope" : "Character__c",
-        "showActionBar" : true,
-        "showChartsPanel" : true,
-        "showDisplay" : "showall",
-        "showFilterPanel" : true,
-        "showImageIcon" : true,
-        "showManualRefreshButton" : true,
-        "showObjectName" : true,
-        "showPinnedList" : true,
-        "showSearchBar" : true
-      },
-      "componentName" : "forceCommunity:objectHome",
-      "id" : "eb7a026a-5c0f-4e0f-8163-e93a77289ef3",
+      "componentAttributes" : { },
+      "componentName" : "c:dungeonCharacterInfo",
+      "id" : "488cfe92-8c28-4e30-bebc-b3777be2cdef",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"

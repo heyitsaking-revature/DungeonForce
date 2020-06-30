@@ -1,0 +1,31 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="recordFetcher">
+    <aura:attribute name="campaignRecords" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card title="Campaigns">
+        <div class="cardText">
+            Keep track of your adventures!
+        </div>
+        <lightning:accordion aura:id="accordion">
+            <aura:iteration items="{!v.campaignRecords}" var="record">
+                <lightning:accordionSection name="{!record.Name}" label="{!record.Name}">
+                    <lightning:recordEditForm recordId="{!record.Id}" 
+                                              objectApiName="Campaign__c" 
+                                              onsuccess="{!c.handleSuccess}">
+                        <lightning:messages />
+                        <div class="half">
+                            <lightning:outputField fieldName="CreatedDate" />
+                            <lightning:inputField fieldName="Notes__c" />
+                        </div>
+                        <lightning:button class="slds-m-top_small" 
+                                          variant="brand"
+                                          type="submit"
+                                          name="update"
+                                          label="Update Campaign"/>
+                    </lightning:recordEditForm>
+                </lightning:accordionSection>
+            </aura:iteration>
+        </lightning:accordion>
+    </lightning:card>
+    
+</aura:component>

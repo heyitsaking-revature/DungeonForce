@@ -9,24 +9,9 @@
     "type" : "region"
   }, {
     "components" : [ {
-      "componentAttributes" : {
-        "enableInlineEdit" : false,
-        "filterName" : "00B3h000005ASpQEAW",
-        "layout" : "COMPACT",
-        "pageSize" : 25,
-        "scope" : "Campaign__c",
-        "showActionBar" : true,
-        "showChartsPanel" : true,
-        "showDisplay" : "showall",
-        "showFilterPanel" : true,
-        "showImageIcon" : true,
-        "showManualRefreshButton" : true,
-        "showObjectName" : true,
-        "showPinnedList" : true,
-        "showSearchBar" : true
-      },
-      "componentName" : "forceCommunity:objectHome",
-      "id" : "006311a9-67f0-4285-bca9-68e6a085a32a",
+      "componentAttributes" : { },
+      "componentName" : "c:dungeonCampaignInfo",
+      "id" : "5186a2bd-632d-429d-b127-c82e1312e5b1",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"

@@ -39,12 +39,15 @@
       "components" : [ {
         "componentAttributes" : {
           "maxAutoCompleteResults" : 5,
-          "searchLabel" : "Search...",
+          "searchLabel" : "Explore...",
           "searchObjects" : [ {
             "name" : "Case",
             "isPublic" : false
           }, {
-            "name" : "AccountBrand",
+            "name" : "Campaign",
+            "isPublic" : true
+          }, {
+            "name" : "Character__c",
             "isPublic" : true
           } ]
         },

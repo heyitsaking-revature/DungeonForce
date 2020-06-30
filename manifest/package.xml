@@ -4,6 +4,7 @@
         <members>dungeonClassController</members>
         <members>dungeonSpellsController</members>
         <members>dungeonEquipmentController</members>
+        <members>recordFetcher</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -18,6 +19,8 @@
         <members>dungeonItemsList</members>
         <members>dungeonItemElements</members>
         <members>abilityScoreSelection</members>
+        <members>dungeonCharacterInfo</members>
+        <members>dungeonCampaignInfo</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>

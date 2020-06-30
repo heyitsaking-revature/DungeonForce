@@ -1,0 +1,65 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="recordFetcher">
+    <aura:attribute name="characterRecords" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card title="Characters">
+        <div class="cardText">
+            Edit your characters as they level up!
+        </div>
+        <lightning:accordion aura:id="accordion">
+            <aura:iteration items="{!v.characterRecords}" var="record">
+                <lightning:accordionSection name="{!record.Name}" label="{!record.Name}">
+                    <lightning:recordEditForm recordId="{!record.Id}" 
+                                              objectApiName="Character__c" 
+                                              onsuccess="{!c.handleSuccess}">
+                        <lightning:messages />
+                        <div class="slds-grid slds-gutters slds-p-horizontal_medium">
+                            <div class="slds-col slds-size_1-of-6">
+                                <lightning:outputField fieldName="Level__c" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Experience__c" />
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-gutters slds-p-horizontal_medium">
+                            <div class="slds-col slds-size_1-of-6">
+                                <lightning:outputField fieldName="Race__c" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Class__c" />
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-gutters slds-p-horizontal_medium">
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Strenght__c" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Dexterity__c" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Constitution__c" />
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-gutters slds-p-horizontal_medium">
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Intelligence__c" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Wisdom__c" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:inputField fieldName="Charisma__c" />
+                            </div>
+                        </div>
+                        <lightning:button class="slds-m-top_small" 
+                                          variant="brand"
+                                          type="submit"
+                                          name="update"
+                                          label="Update Character"/>
+                    </lightning:recordEditForm>
+                </lightning:accordionSection>
+            </aura:iteration>
+        </lightning:accordion>
+    </lightning:card>
+    
+</aura:component>
